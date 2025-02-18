@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+
+  <script>
+    const newDiv = document.createElement('div');
+    newDiv.textContent = "New text!";
+    const parentDiv = document.getElementById('myDiv');
+    parentDiv.replaceChild(newDiv, parentDiv.firstChild); //Corrected solution using replaceChild
+    //Alternative solution using appendChild:
+    //parentDiv.appendChild(newDiv);
+  </script>
+</body>
+</html>
